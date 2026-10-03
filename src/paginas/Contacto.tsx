@@ -25,7 +25,7 @@ export default function Contacto() {
         content="Contacta con 217 Funcional GYM por teléfono, WhatsApp, Instagram o email. Estamos en Ugena (Toledo)."
       />
 
-      <section className="relative h-[60svh] laptop:min-h-116 overflow-hidden">
+      <section className="relative h-[60svh] laptop:min-h-110 overflow-hidden">
         <picture className="absolute inset-0 w-full h-full pointer-events-none">
           <source
             media="(min-width: 768px)"
