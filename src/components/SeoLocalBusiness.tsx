@@ -7,6 +7,7 @@ export function SeoLocalBusiness() {
       "@context": "https://schema.org",
       "@type": "ExerciseGym",
       name: datos.name,
+      legalName: datos.legal.titular,
       telephone: datos.phone.call,
       email: datos.email,
       url: datos.siteUrl,

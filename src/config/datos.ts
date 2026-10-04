@@ -10,7 +10,7 @@ export const datos = {
     longitude: -3.875910410001515,
   },
   address: {
-    street: "Calle Proyecto 5, 69",
+    street: "Calle Proyecto 5, Nave 69",
     locality: "Ugena",
     region: "Toledo",
     postalCode: "45217",
