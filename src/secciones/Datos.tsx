@@ -11,7 +11,7 @@ const itemVariants: Variants = {
 
 export default function Datos() {
   return (
-    <section className="bg-almostblack border-y border-gray-700 py-8 px-4">
+    <section className="bg-almostblack border-y border-gray-700 py-5 min-[600px]:py-8 px-4">
       {/* Version escritorio: fila con divide-x */}
       <m.div
         className="hidden min-[600px]:flex items-stretch w-full max-w-4xl mx-auto text-center divide-x divide-gray-700 mb-2"
@@ -27,13 +27,25 @@ export default function Datos() {
           variants={itemVariants}
           className="flex flex-col flex-1 items-center justify-start min-[600px]:px-1 md:px-4 lg:px-8 xl:px-14"
         >
-          <div className="h-16 flex items-center justify-center">
-            <p className="text-3xl font-bold text-white">400 m²</p>
+          <div className="h-14 flex items-center justify-center">
+            <p className="text-3xl mb-7 font-bold text-white">SIN</p>
           </div>
-          <div className="h-8 flex items-center justify-center">
-            <p className="text-base text-gray-400 uppercase tracking-wide">
-              Instalaciones
-            </p>
+          <div className="h-8 flex items-end justify-center">
+            <div className="flex flex-col items-center">
+              <p className="text-sm leading-4 text-gray-400 uppercase tracking-wide">
+                Matrícula
+              </p>
+              <div className="self-stretch flex items-center gap-2">
+                <span className="h-px flex-1 bg-brand-gold-dark" />
+                <span className="text-xs leading-3 text-brand-gold-dark uppercase">
+                  ni
+                </span>
+                <span className="h-px flex-1 bg-brand-gold-dark" />
+              </div>
+              <p className="text-sm leading-4 text-gray-400 uppercase tracking-wide">
+                Permanencia
+              </p>
+            </div>
           </div>
         </m.div>
 
@@ -41,11 +53,11 @@ export default function Datos() {
           variants={itemVariants}
           className="flex flex-col flex-1 items-center justify-start min-[600px]:px-1 md:px-4 lg:px-8 xl:px-14"
         >
-          <div className="h-16 flex items-center justify-center">
-            <Dumbbell size={42} className="text-brand-gold-dark" />
+          <div className="h-14 flex items-center justify-center">
+            <Dumbbell size={42} className="text-brand-gold-dark mb-4" />
           </div>
-          <div className="h-8 flex items-center justify-center">
-            <p className="text-sm text-gray-400 uppercase tracking-wide -mb-4">
+          <div className="h-8 flex items-end justify-center">
+            <p className="text-sm text-gray-400 uppercase tracking-wide ">
               Entrenamientos Personales
             </p>
           </div>
@@ -55,7 +67,7 @@ export default function Datos() {
           variants={itemVariants}
           className="flex flex-col items-center flex-1 justify-start min-[600px]:px-1 md:px-4 lg:px-8 xl:px-14"
         >
-          <div className="h-16 flex items-center justify-center">
+          <div className="h-14 flex items-center justify-center">
             <img
               src={logoMarca}
               alt="Titanium Strength"
@@ -64,7 +76,7 @@ export default function Datos() {
               className="h-32 w-auto"
             />
           </div>
-          <div className="h-8 flex items-center justify-center">
+          <div className="h-8 flex items-end justify-center">
             <p className="text-base text-gray-400 uppercase tracking-wide">
               Equipamiento
             </p>
@@ -75,10 +87,10 @@ export default function Datos() {
           variants={itemVariants}
           className="flex flex-col items-center flex-1 justify-start min-[600px]:px-1 md:px-4 lg:px-8 xl:px-14"
         >
-          <div className="h-16 flex items-center justify-center">
-            <MapPin size={42} className="text-gray-400" />
+          <div className="h-14 flex items-center justify-center">
+            <MapPin size={42} className="text-gray-400 mb-4" />
           </div>
-          <div className="h-8 flex items-center justify-center">
+          <div className="h-8 flex items-end justify-center">
             <p className="text-2xl font-bold text-white">Ugena</p>
           </div>
         </m.div>
@@ -93,12 +105,24 @@ export default function Datos() {
         className="grid grid-cols-2 min-[600px]:hidden max-w-md sm:max-w-lg mx-auto overflow-hidden mt-2 mb-2"
       >
         <div className="flex flex-col items-center justify-between h-full gap-1">
-          <p className="text-2xl font-bold text-white leading-none py-2">
-            400 m²
-          </p>
-          <p className="text-xs text-gray-400 uppercase tracking-wide -mb-2">
-            Instalaciones
-          </p>
+          <div className="h-8 flex items-center justify-center -mb-1">
+            <p className="text-2xl font-bold text-white leading-none">SIN</p>
+          </div>
+          <div className="flex flex-col items-center -mb-6">
+            <p className="text-xs leading-4 text-gray-400 uppercase tracking-wide">
+              Matrícula
+            </p>
+            <div className="self-stretch flex items-center gap-2">
+              <span className="h-px flex-1 bg-brand-gold-dark" />
+              <span className="text-[10px] leading-3 text-brand-gold-dark uppercase">
+                ni
+              </span>
+              <span className="h-px flex-1 bg-brand-gold-dark" />
+            </div>
+            <p className="text-xs leading-4 text-gray-400 uppercase tracking-wide">
+              Permanencia
+            </p>
+          </div>
         </div>
 
         <div className="flex flex-col items-center justify-between h-full gap-1">
