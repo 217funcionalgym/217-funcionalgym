@@ -27,7 +27,7 @@ export default function Hero() {
             loading="eager"
             width="800"
             height="1200"
-            className="w-full h-full object-cover object-center sm:object-top laptop:object-center brightness-[0.75]"
+            className="w-full h-full object-cover object-center brightness-[0.75]"
           />
         </picture>
       </m.div>

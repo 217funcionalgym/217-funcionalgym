@@ -1,22 +1,16 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { m } from "framer-motion";
-import type { Variants } from "framer-motion";
 
 import bannerDesktop from "../assets/Barra-desktop.webp";
 import bannerMobile from "../assets/Barra-mobile.webp";
-import logoMarca from "../assets/Titanium-strength.webp";
 import galeria1 from "../assets/Barra-mobile.webp";
 import galeria2 from "../assets/Clases-Funcionales-mobile.webp";
 import galeria3 from "../assets/Personal-trainner.webp";
 import galeria4 from "../assets/rueda-mobile.webp";
 import galeria5 from "../assets/Servicios-mobile.webp";
 import galeria6 from "../assets/Horario-mobile.webp";
-
-const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
-};
+import Datos from "../secciones/Datos";
 
 export default function SobreNosotros() {
   const [indiceAmpliado, setIndiceAmpliado] = useState<number | null>(null);
@@ -96,112 +90,7 @@ export default function SobreNosotros() {
         </m.div>
       </section>
 
-      <section className="bg-almostblack border-y border-gray-700 py-8 px-4">
-        {/* Version movil: grid 2x2 */}
-        <m.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          viewport={{ once: true }}
-          className="grid grid-cols-2 min-[600px]:hidden max-w-md mx-auto overflow-hidden mt-2 mb-2"
-        >
-          <div className="flex flex-col items-center justify-center">
-            <p className="text-2xl font-bold text-white py-2 -mt-3">400 m²</p>
-            <p className="text-xs text-gray-400 text-center uppercase tracking-wide mt-1 mb-4">
-              Zona de Entrenamiento
-            </p>
-          </div>
-          <div className="flex flex-col items-center justify-center">
-            <p className="text-2xl font-bold text-white py-2 -mt-3">0</p>
-            <p className="text-xs text-gray-400 text-center uppercase tracking-wide mt-1 mb-4">
-              Permanencia
-            </p>
-          </div>
-          <div className="flex flex-col items-center justify-center">
-            <p className="text-2xl font-bold text-white mt-5 py-6">100 %</p>
-            <p className="text-xs text-gray-400 text-center uppercase tracking-wide mt-1">
-              Equipamiento Profesional
-            </p>
-          </div>
-          <div className="flex flex-col items-center justify-center gap-1">
-            <img
-              src={logoMarca}
-              alt="Titanium Strength"
-              width="250"
-              height="250"
-              loading="lazy"
-              className="h-28 w-auto"
-            />
-            <p className="text-xs text-gray-400 text-center uppercase tracking-wide -mt-3">
-              Equipamiento
-            </p>
-          </div>
-        </m.div>
-
-        {/* Version escritorio */}
-        <m.div
-          className="hidden min-[600px]:flex items-stretch w-full max-w-4xl mx-auto text-center divide-x divide-gray-700"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={{
-            hidden: {},
-            visible: { transition: { staggerChildren: 0.15 } },
-          }}
-        >
-          <m.div
-            variants={itemVariants}
-            className="flex-1 flex flex-col items-center justify-center min-[600px]:px-2 md:px-6 lg:px-12"
-          >
-            <div className="h-14 flex items-center">
-              <p className="text-3xl font-bold text-white">400 m²</p>
-            </div>
-            <p className="text-sm text-gray-400 uppercase tracking-wide mt-2">
-              Zona de Entrenamiento
-            </p>
-          </m.div>
-          <m.div
-            variants={itemVariants}
-            className="flex-1 flex flex-col items-center justify-center min-[600px]:px-2 md:px-6 lg:px-12"
-          >
-            <div className="h-14 flex items-center">
-              <p className="text-3xl font-bold text-white">0</p>
-            </div>
-            <p className="text-sm text-gray-400 uppercase tracking-wide mt-2">
-              Permanencia
-            </p>
-          </m.div>
-          <m.div
-            variants={itemVariants}
-            className="flex-1 flex flex-col items-center justify-center min-[600px]:px-2 md:px-6 lg:px-12"
-          >
-            <div className="h-14 flex items-center">
-              <p className="text-3xl font-bold text-white">100%</p>
-            </div>
-            <p className="text-sm text-gray-400 uppercase tracking-wide mt-2">
-              Equipamiento Profesional
-            </p>
-          </m.div>
-          <m.div
-            variants={itemVariants}
-            className="flex-1 flex flex-col items-center justify-center min-[600px]:px-2 md:px-6 lg:px-12"
-          >
-            <div className="h-16 flex items-center">
-              <img
-                src={logoMarca}
-                alt="Titanium Strength"
-                width="250"
-                height="250"
-                loading="lazy"
-                className="h-28 w-auto"
-              />
-            </div>
-            <p className="text-sm text-gray-400 uppercase tracking-wide mt-2">
-              Equipamiento
-            </p>
-          </m.div>
-        </m.div>
-      </section>
+      <Datos />
 
       <section className="bg-black py-12 px-4">
         <m.h2
