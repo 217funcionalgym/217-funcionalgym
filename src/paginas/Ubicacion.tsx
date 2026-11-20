@@ -111,7 +111,7 @@ export default function Ubicacion() {
             </p>
             <p className="flex items-center gap-2">
               <MapPin size={18} className="text-brand-gold" />
-              Calle Proyecto 5, 69
+              Calle Proyecto 5, Nave 69
             </p>
             <p className="flex items-center gap-2">
               <Car size={18} className="text-brand-gold" />
