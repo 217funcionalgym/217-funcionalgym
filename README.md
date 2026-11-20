@@ -1,8 +1,43 @@
-# 217 GYM
+# 217 FUNCIONAL GYM 🏋️
 
-Página web del gimnasio 217, construida con React + TypeScript + Vite.
+Página web informativa para **217 Funcional GYM**, un gimnasio funcional real en Ugena (Toledo). Proyecto real desarrollado de principio a fin para los dueños del gimnasio.
 
-## Desarrollo
+🔗 **Web en vivo:** [217funcionalgym.es](https://217funcionalgym.es/)
 
+![Captura del Hero de 217 Funcional GYM](docs/screenshot-hero.png)
+
+## Sobre el proyecto
+
+Web 100% informativa (sin backend ni base de datos) que incluye horarios, tarifas, servicios, ubicación con mapa y contacto. El formulario de contacto abre WhatsApp directamente, sin enviar datos a ningún servidor.
+
+## Stack
+
+- **React 19** + **TypeScript**
+- **Vite**
+- **Tailwind CSS v4**
+- **Framer Motion** (con `LazyMotion` para reducir el bundle)
+- **React Router v7**
+
+## Características
+
+- ⚡ Rendimiento optimizado: lazy loading de rutas, preload de imagen crítica (LCP), chunk preloading en idle
+- ♿ Accesibilidad: 100/100 en Lighthouse
+- 🔍 SEO: metadatos por página, Schema.org LocalBusiness, sitemap.xml, robots.txt — 100/100 en Lighthouse
+- 📱 Diseño responsive con animaciones (respeta `prefers-reduced-motion`)
+- 🍪 Gestión de consentimiento de cookies para el mapa embebido
+
+## Resultados PageSpeed
+
+| Métrica          | Mobile | Desktop |
+| ---------------- | ------ | ------- |
+| Rendimiento      | 95     | 99      |
+| Accesibilidad    | 100    | 100     |
+| Buenas prácticas | 100    | 100     |
+| SEO              | 100    | 100     |
+
+## Desarrollo local
+
+```bash
 npm install
 npm run dev
+```
