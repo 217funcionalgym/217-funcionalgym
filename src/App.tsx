@@ -73,25 +73,39 @@ export default function App() {
       });
     };
 
-    const precargar = () => {
-      precargarPaginas();
+    // Las fotos de cabecera se precargan con la primera interacción del usuario
+    const eventosInteraccion = ["pointerdown", "pointermove", "scroll", "keydown"];
+
+    const alInteractuar = () => {
+      eventosInteraccion.forEach((evento) =>
+        window.removeEventListener(evento, alInteractuar),
+      );
       precargarBanners();
     };
 
     const cuandoEsteLibre = () => {
       if ("requestIdleCallback" in window) {
-        requestIdleCallback(precargar);
+        requestIdleCallback(precargarPaginas);
       } else {
-        setTimeout(precargar, 1000);
+        setTimeout(precargarPaginas, 1000);
       }
+      eventosInteraccion.forEach((evento) =>
+        window.addEventListener(evento, alInteractuar, { passive: true }),
+      );
     };
 
     if (document.readyState === "complete") {
       cuandoEsteLibre();
     } else {
       window.addEventListener("load", cuandoEsteLibre, { once: true });
-      return () => window.removeEventListener("load", cuandoEsteLibre);
     }
+
+    return () => {
+      window.removeEventListener("load", cuandoEsteLibre);
+      eventosInteraccion.forEach((evento) =>
+        window.removeEventListener(evento, alInteractuar),
+      );
+    };
   }, []);
 
   return (
