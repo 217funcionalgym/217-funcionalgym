@@ -8,8 +8,34 @@ import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import { Canonical } from "./components/Canonical";
 import { SeoLocalBusiness } from "./components/SeoLocalBusiness";
+import Inicio from "./paginas/Inicio";
 
-const Inicio = lazy(() => import("./paginas/Inicio"));
+import horarioDesktop from "./assets/Horario-desktop.webp";
+import horarioMobile from "./assets/Horario-mobile.webp";
+import serviciosDesktop from "./assets/Servicios-desktop.webp";
+import serviciosMobile from "./assets/Servicios-mobile.webp";
+import tarifasDesktop from "./assets/Mancuernero-desktop.webp";
+import tarifasMobile from "./assets/Mancuernero-mobile.webp";
+import sobreNosotrosDesktop from "./assets/Barra-desktop.webp";
+import sobreNosotrosMobile from "./assets/Barra-mobile.webp";
+import contactoDesktop from "./assets/Clases-Funcionales-desktop.webp";
+import contactoMobile from "./assets/Clases-Funcionales-mobile.webp";
+
+const bannersDesktop = [
+  horarioDesktop,
+  serviciosDesktop,
+  tarifasDesktop,
+  sobreNosotrosDesktop,
+  contactoDesktop,
+];
+const bannersMobile = [
+  horarioMobile,
+  serviciosMobile,
+  tarifasMobile,
+  sobreNosotrosMobile,
+  contactoMobile,
+];
+
 const Horario = lazy(() => import("./paginas/Horario"));
 const Servicios = lazy(() => import("./paginas/Servicios"));
 const Tarifas = lazy(() => import("./paginas/Tarifas"));
@@ -32,10 +58,39 @@ export default function App() {
       import("./paginas/Contacto");
     };
 
-    if ("requestIdleCallback" in window) {
-      requestIdleCallback(precargarPaginas);
+    const precargarBanners = () => {
+      const conexion = (navigator as { connection?: { saveData?: boolean } })
+        .connection;
+      if (conexion?.saveData) return;
+
+      const esDesktop = window.matchMedia("(min-width: 768px)").matches;
+      const banners = esDesktop ? bannersDesktop : bannersMobile;
+
+      banners.forEach((src) => {
+        const img = new Image();
+        img.fetchPriority = "low";
+        img.src = src;
+      });
+    };
+
+    const precargar = () => {
+      precargarPaginas();
+      precargarBanners();
+    };
+
+    const cuandoEsteLibre = () => {
+      if ("requestIdleCallback" in window) {
+        requestIdleCallback(precargar);
+      } else {
+        setTimeout(precargar, 1000);
+      }
+    };
+
+    if (document.readyState === "complete") {
+      cuandoEsteLibre();
     } else {
-      setTimeout(precargarPaginas, 1000);
+      window.addEventListener("load", cuandoEsteLibre, { once: true });
+      return () => window.removeEventListener("load", cuandoEsteLibre);
     }
   }, []);
 

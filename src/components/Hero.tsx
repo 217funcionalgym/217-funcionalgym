@@ -8,7 +8,7 @@ export default function Hero() {
   return (
     <section className="relative h-[85svh] overflow-hidden">
       <m.div
-        className="absolute inset-0 w-full h-full -z-10"
+        className="absolute inset-0 w-full h-full -z-10 will-change-transform"
         initial={{ scale: 1.1 }}
         animate={{ scale: 1.15 }}
         transition={{

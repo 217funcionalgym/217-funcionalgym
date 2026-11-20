@@ -26,13 +26,17 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta property="og:url" content="https://217funcionalgym.es" />
 
-    <link
-      rel="preload"
-      as="image"
-      href="/Gym-Interior-mobile.webp"
-      media="(max-width: 767px)"
-      fetchpriority="high"
-    />
+    <script>
+      if (location.pathname === "/") {
+        const preload = document.createElement("link");
+        preload.rel = "preload";
+        preload.as = "image";
+        preload.href = "/Gym-Interior-mobile.webp";
+        preload.media = "(max-width: 767px)";
+        preload.fetchPriority = "high";
+        document.head.appendChild(preload);
+      }
+    </script>
   </head>
 
   <body>
