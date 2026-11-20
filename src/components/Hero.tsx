@@ -12,6 +12,7 @@ export default function Hero() {
         initial={{ scale: 1.1 }}
         animate={{ scale: 1.15 }}
         transition={{
+          delay: 4,
           duration: 25,
           ease: "easeInOut",
           repeat: Infinity,
