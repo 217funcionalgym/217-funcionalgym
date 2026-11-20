@@ -10,7 +10,7 @@ import fotoGimnasio from "../assets/Gym-Interior-mobile.webp";
 
 export default function Ubicacion() {
   const [mapaCargado, setMapaCargado] = useState(false);
-  const [mostrarMapa, setMostrarMapa] = useState(false); // NUEVO
+  const [mostrarMapa, setMostrarMapa] = useState(false);
 
   return (
     <>
@@ -69,7 +69,6 @@ export default function Ubicacion() {
               className={`absolute inset-0 w-full h-full object-cover transition-opacity motion-reduce:transition-none duration-100 ${mapaCargado ? "opacity-0" : "opacity-100"}`}
             />
 
-            {/* CAMBIO: el iframe solo existe si el usuario ha pulsado "Ver mapa" */}
             {mostrarMapa && (
               <iframe
                 src="https://maps.google.com/maps?q=Calle+Proyecto+5,+69,+Poligono+Industrial+La+Frontera,+Ugena,+Toledo&output=embed"
@@ -81,7 +80,6 @@ export default function Ubicacion() {
               ></iframe>
             )}
 
-            {/* NUEVO: aviso y botón, visibles solo mientras el mapa no se ha pedido */}
             {!mostrarMapa && (
               <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-black/60 px-6">
                 <button

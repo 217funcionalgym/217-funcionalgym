@@ -72,7 +72,7 @@ export default function Footer() {
               Contacto
             </p>
             <a
-              href={`tel:${datos.phone.call}`}
+              href={`tel:+${datos.phone.whatsapp}`}
               className="flex items-center gap-2 text-sm no-underline text-gray-400 hover:text-brand-gold transition-colors py-1"
             >
               <Phone size={16} className="text-brand-gold" />

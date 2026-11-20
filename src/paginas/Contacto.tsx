@@ -68,7 +68,7 @@ export default function Contacto() {
 
           <div className="flex flex-col gap-6 items-center">
             <a
-              href={`tel:${datos.phone.call}`}
+              href={`tel:+${datos.phone.whatsapp}`}
               className="flex items-center gap-3 text-gray-300 no-underline hover:text-brand-gold active:text-brand-gold transition-colors"
             >
               <Phone size={24} className="text-brand-gold" />
@@ -148,10 +148,14 @@ export default function Contacto() {
             className="flex flex-col gap-5 text-left"
           >
             <div>
-              <label className="block text-sm text-gray-400 uppercase tracking-wide mb-2">
+              <label
+                htmlFor="nombre"
+                className="block text-sm text-gray-400 uppercase tracking-wide mb-2"
+              >
                 Nombre:
               </label>
               <input
+                id="nombre"
                 type="text"
                 placeholder="Tu nombre"
                 value={nombre}
@@ -161,10 +165,14 @@ export default function Contacto() {
               />
             </div>
             <div>
-              <label className="block text-sm text-gray-400 uppercase tracking-wide mb-2">
+              <label
+                htmlFor="consulta"
+                className="block text-sm text-gray-400 uppercase tracking-wide mb-2"
+              >
                 Consulta:
               </label>
               <textarea
+                id="consulta"
                 placeholder="Escribe tu consulta..."
                 value={mensaje}
                 onChange={(e) => setMensaje(e.target.value)}

@@ -73,7 +73,7 @@ export default function Datos() {
               alt="Titanium Strength"
               width="250"
               height="250"
-              className="h-32 w-auto"
+              className="h-32 w-auto object-contain"
             />
           </div>
           <div className="h-8 flex items-end justify-center">
@@ -140,7 +140,7 @@ export default function Datos() {
             alt="Titanium Strength"
             width="250"
             height="250"
-            className="h-28 w-auto"
+            className="h-28 w-auto object-contain"
           />
           <p className="text-xs text-gray-400 uppercase tracking-wide -mt-4 -mb-6">
             Equipamiento
